@@ -1,0 +1,21 @@
+---
+name: Test container structure
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build image
+        run: |
+          docker build -t ghcr.io/jbangdev/jbang-action:test .
+
+      - name: Test image
+        uses: brpaz/structure-tests-action@v1.1.2
+        with:
+          image: ghcr.io/jbangdev/jbang-action:test
+          configFile: container-structure-test.yaml
