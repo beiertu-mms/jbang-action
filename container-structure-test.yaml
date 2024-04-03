@@ -28,7 +28,7 @@ commandTests:
         value: https://github.com/jruby
     command: "entrypoint"
     expectedError:
-      - "[jbang] Trusting permanently: [https://github.com/jruby]"
+      - "\\[jbang] Trusting permanently: \\[https:\/\/github.com\/jruby]"
   - name: "Does multiple arguments work"
     envVars:
       - key: INPUT_SCRIPT
